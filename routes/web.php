@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GeneralController;
+use App\Http\Controllers\MonsterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get("/dashboard", [GeneralController::class, "dashboard"])->name('dashboard');
     Route::get('/user', [GeneralController::class, 'userIndex'])->name('user-index');
     Route::post('/user', [GeneralController::class, 'userUpdate'])->name('user-update');
+    Route::get('/create-monster', [MonsterController::class, 'monsterIndex'])->name('create-monster-index');
 });
 
 Route::get("/", [GeneralController::class, "home"])->name("login");
