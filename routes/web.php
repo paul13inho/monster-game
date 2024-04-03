@@ -20,9 +20,15 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['auth'])->group(function () {
     Route::get("/terms", [GeneralController::class, "terms"])->name("terms");
     Route::get("/dashboard", [GeneralController::class, "dashboard"])->name('dashboard');
+    Route::get('/master', [GeneralController::class, 'masterIndex'])->name('master-index');
     Route::get('/user', [GeneralController::class, 'userIndex'])->name('user-index');
     Route::post('/user', [GeneralController::class, 'userUpdate'])->name('user-update');
     Route::get('/create-monster', [MonsterController::class, 'monsterIndex'])->name('create-monster-index');
+    Route::get('/create-type', [MonsterController::class, 'typeIndex'])->name('create-type-index');
+
+    Route::get('/create-move', [MonsterController::class, 'moveIndex'])->name('create-move-index');
+    Route::post('/create-move', [MonsterController::class, 'moveCreate'])->name('monster.move-create');
+    Route::get('/get-moves', [MonsterController::class, 'getMoves'])->name('get-moves');
 });
 
 Route::get("/", [GeneralController::class, "home"])->name("login");

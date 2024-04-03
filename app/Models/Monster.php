@@ -8,4 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Monster extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'type',
+        'level',
+        'life'
+    ];
+
+    public function moves()
+    {
+        return $this->belongsToMany(Move::class, 'monster_move');
+    }
+
+
 }

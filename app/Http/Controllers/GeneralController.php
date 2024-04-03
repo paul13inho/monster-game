@@ -94,6 +94,13 @@ class GeneralController extends Controller
     }
 
 
+    public function masterIndex(){
+        $user = Auth::user();
+
+        return view('master', ['user' => $user]);
+    }
+
+
 
 
 
