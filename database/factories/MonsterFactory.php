@@ -21,14 +21,18 @@ class MonsterFactory extends Factory
      */
     public function definition()
     {
-        // Example monster types
         $monsterTypes = ['Fire', 'Water', 'Earth', 'Wind'];
+
+        $type = $this->faker->randomElement($monsterTypes);
+        $imageFileName = strtolower($type) . '.png';
+        $imagePath = 'monsters/' . $imageFileName;
 
         return [
             'name' => $this->faker->unique()->word,
-            'type' => $this->faker->randomElement($monsterTypes),
+            'type' => $type,
             'level' => $this->faker->numberBetween(1, 20),
-            'life' => $this->faker->numberBetween(10, 20)
+            'life' => $this->faker->numberBetween(10, 20),
+            'portrait' => $imagePath,
         ];
     }
 }

@@ -29,6 +29,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/create-move', [MonsterController::class, 'moveIndex'])->name('create-move-index');
     Route::post('/create-move', [MonsterController::class, 'moveCreate'])->name('monster.move-create');
     Route::get('/get-moves', [MonsterController::class, 'getMoves'])->name('get-moves');
+
+    Route::get('/capture', [\App\Http\Controllers\CaptureController::class, 'captureMonster'])->name('capture-monster
+    ');
 });
 
 Route::get("/", [GeneralController::class, "home"])->name("login");

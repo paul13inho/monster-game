@@ -10,8 +10,6 @@ class MonsterController extends Controller
 {
     public function monsterIndex(){
 
-
-
         $user = Auth::user();
 
         return view('create-monster', ['user' => $user]);

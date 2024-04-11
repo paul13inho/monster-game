@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('type');
             $table->integer('level');
             $table->integer('life');
+            $table->string('portrait');
             $table->timestamps();
         });
     }

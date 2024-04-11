@@ -13,7 +13,8 @@ class Monster extends Model
         'name',
         'type',
         'level',
-        'life'
+        'life',
+        'picture'
     ];
 
     public function moves()
