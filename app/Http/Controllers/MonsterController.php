@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Move;
+use App\Models\MyTeam;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -45,6 +46,32 @@ class MonsterController extends Controller
 
         return redirect()->back()->with('user', $user);
     }
+
+    public function capture(Request $request)
+    {
+        dd($request);
+
+
+        $user = Auth::user();
+
+        $monsterId = $request->monster_id;
+
+        MyTeam::create([
+            'user_id' => $userId,
+            'monster_id' => $monsterId,
+        ]);
+
+        return back()->with('success', 'Monster captured successfully!');
+    }
+
+
+
+
+
+
+
+
+
 
 
 

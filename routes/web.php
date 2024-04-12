@@ -32,6 +32,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/capture', [\App\Http\Controllers\CaptureController::class, 'captureMonster'])->name('capture-monster
     ');
+    Route::post('/capture-monster', [MonsterController::class, 'capture'])->name('capture-monster');
+
 });
 
 Route::get("/", [GeneralController::class, "home"])->name("login");

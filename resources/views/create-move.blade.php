@@ -4,7 +4,7 @@
 <div class="container mx-auto p-4">
     <h1 class="text-3xl font-bold mb-4">Move Creation</h1>
 
-    <form action="{{route('monster.move-create')}}" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <form action="{{route('monster.move-create')}}" method="post" class="move-form">
         @csrf
 
         <div class="mb-4">
